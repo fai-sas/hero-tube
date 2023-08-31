@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>PHero Tube Blog</title>
+  </head>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+  <body>
+    <!-- navbar -->
+    <nav class="container px-20 py-8 mx-auto">
+      <div class="navbar bg-base-100">
+        <div class="navbar-start">
+          <img src="./assets/Logo.png" alt="logo" />
+        </div>
+
+        <div class="navbar-end">
+          <a href="./index.html">
+            <button
+              class="btn py-3 px-5 hover:bg-[#e77b68ed] text-white bg-[#FF1F3D]"
+            >
+              Home
+            </button></a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <div class="container px-20 py-2 mx-auto">
+      <h1 class="text-4xl font-bold">Welcome to PHero Blog</h1>
+    </div>
+
+    <!-- accordion -->
+    <main class="container p-20 pt-0 mx-auto my-8">
+      <div class="my-4 collapse collapse-arrow bg-base-200">
+        <input type="radio" name="my-accordion-2" checked="checked" />
+        <div class="text-xl font-medium collapse-title">
+          Discuss the scope of var, let, and const
+        </div>
+        <div class="collapse-content">
+          <p>hello</p>
+        </div>
+      </div>
+      <div class="my-4 collapse collapse-arrow bg-base-200">
+        <input type="radio" name="my-accordion-2" />
+        <div class="text-xl font-medium collapse-title">
+          Tell us the use cases of null and undefined
+        </div>
+        <div class="collapse-content">
+          <p>hello</p>
+        </div>
+      </div>
+      <div class="my-4 collapse collapse-arrow bg-base-200">
+        <input type="radio" name="my-accordion-2" />
+        <div class="text-xl font-medium collapse-title">
+          What do you mean by REST API?
+        </div>
+        <div class="collapse-content">
+          <p>hello</p>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
