@@ -43,36 +43,130 @@
     </nav>
 
     <div class="container px-4 py-2 mx-auto lg:px-20">
-      <h1 class="text-4xl font-bold">Welcome to PHero Blog</h1>
+      <h1 class="text-4xl font-bold">Welcome to PHero Tube Blog</h1>
     </div>
 
     <!-- accordion -->
     <main class="container px-4 pt-0 mx-auto my-8 lg:px-20">
       <div class="my-4 collapse collapse-arrow bg-base-200">
         <input type="radio" name="my-accordion-2" checked="checked" />
-        <div class="text-xl font-medium collapse-title">
+        <div class="text-2xl font-bold collapse-title">
           Discuss the scope of var, let, and const
         </div>
         <div class="collapse-content">
-          <p>hello</p>
+          <h2 class="py-4 text-xl font-semibold">Scope of Var</h2>
+          <ul class="pl-8 list-disc">
+            <li class="pb-4">
+              Only accessible within the function where it is defined.
+            </li>
+            <li class="pb-4">
+              If defined outside of any function, it is globally scoped and can
+              be accessed from any part of the code.
+            </li>
+          </ul>
+          <!--  -->
+          <h2 class="pb-4 text-xl font-semibold">Scope of Let</h2>
+          <ul class="pl-8 list-disc">
+            <li class="pb-4">
+              Only accessible within the block where it is defined.
+            </li>
+            <li class="pb-4">
+              If defined inside a function, it is only accessible within that
+              function.
+            </li>
+            <li class="">
+              If defined outside of any function or block, it is not accessible
+              from any part of the code.
+            </li>
+          </ul>
+          <!--  -->
+          <!--  -->
+          <h2 class="py-4 text-xl font-semibold">Scope of Const</h2>
+          <ul class="pl-8 list-disc">
+            <li class="pb-4">
+              Only accessible within the block where it is defined.
+            </li>
+            <li class="pb-4">
+              If defined inside a function, it is only accessible within that
+              function.
+            </li>
+            <li class="">
+              If defined outside of any function or block, it is globally scoped
+              and can be accessed from any part of the code.
+            </li>
+          </ul>
+          <!--  -->
         </div>
       </div>
       <div class="my-4 collapse collapse-arrow bg-base-200">
         <input type="radio" name="my-accordion-2" />
-        <div class="text-xl font-medium collapse-title">
+        <div class="text-2xl font-bold collapse-title">
           Tell us the use cases of null and undefined
         </div>
         <div class="collapse-content">
-          <p>hello</p>
+          <h2 class="py-4 text-xl font-semibold">Use Cases of Null</h2>
+          <ul class="pl-8 list-disc">
+            <li class="pb-4">
+              Null is used to identify the existence of any element or object.
+              For example, if a variable or object property has not been
+              declared or initialized, it will be null.
+            </li>
+            <li class="pb-4">
+              Null can be used to prevent errors when working with variables
+              that may not have a value. For example, to check if any property
+              of an object is available or not, property can be checked if it
+              null or not.
+            </li>
+            <li>
+              Null can be used to return a default value when no value is
+              available. For example, a function that doesn't take any arguments
+              may return null by default.
+            </li>
+          </ul>
+          <!--  -->
+          <h2 class="py-4 text-xl font-semibold">Use Cases of undefined</h2>
+          <ul class="pl-8 list-disc">
+            <li class="pb-4">
+              When a variable is declared but not initialized, it will be
+              undefined.
+            </li>
+            <li class="pb-4">
+              When a function does not have any meaningful return value it can
+              return undefined.
+            </li>
+            <li class="pb-4">
+              Undefined will be returned if no parameter is passed in function.
+            </li>
+            <li class="pb-4">
+              If any property does not exist in an object will return undefined.
+            </li>
+            <li class="pb-4">
+              Accessing array elements outside of the index range will return
+              undefined..
+            </li>
+            <li>
+              Deleting an element inside of an array will return undefined
+            </li>
+          </ul>
         </div>
       </div>
       <div class="my-4 collapse collapse-arrow bg-base-200">
         <input type="radio" name="my-accordion-2" />
-        <div class="text-xl font-medium collapse-title">
+        <div class="text-2xl font-bold collapse-title">
           What do you mean by REST API?
         </div>
         <div class="collapse-content">
-          <p>hello</p>
+          <p class="py-4">
+            REST stands for Representational State Transfer. Rest API is used to
+            Create, Read, Update and Delete elements in a website. Here are the
+            most common methods used in REST APIs:
+          </p>
+          <ul class="pl-8 list-disc">
+            <li class="pb-4">Get: Receive information about API resource</li>
+            <li class="pb-4">Post: Create an API resource</li>
+            <li class="pb-4">Put/Patch: Update an API resource</li>
+            <li class="pb-4">Delete: Delete an API resource</li>
+          </ul>
         </div>
       </div>
     </main>
