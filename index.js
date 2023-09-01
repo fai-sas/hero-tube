@@ -28,6 +28,14 @@ const showContent = async (categoryId) => {
   const cardContainer = document.getElementById('card-container')
   cardContainer.innerHTML = ''
 
+  const dataContainer = document.getElementById('data-container')
+
+  if (content.length <= 0) {
+    dataContainer.classList.remove('hidden')
+  } else {
+    dataContainer.classList.add('hidden')
+  }
+
   content.forEach((item) => {
     const verified = item?.authors[0]?.verified
     const seconds = item?.others?.posted_date
@@ -50,9 +58,15 @@ const showContent = async (categoryId) => {
                 item?.authors[0]?.profile_picture
               }" class=" w-10 h-10 rounded-full object-cover" alt="" />
             </div>
-            <p class="absolute bottom-[9rem] right-4 badge badge-neutral">
-             ${seconds ? `${hours}hrs ${minutes} min ago` : ''}
-            </p>
+              ${
+                seconds
+                  ? `
+              <p class="absolute bottom-[9rem] right-4 badge badge-neutral">
+                ${hours}hrs ${minutes} min ago
+              </p>
+              `
+                  : ''
+              }
             <main>
               <h2 class=" text-[#171717] font-bold card-title">
                 ${item?.title}
