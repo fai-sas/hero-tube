@@ -25,6 +25,17 @@ const showContent = async (categoryId) => {
   const data = await response.json()
   const content = data.data
 
+  const sortBtn = document.getElementById('sort-by-views')
+
+  sortBtn.addEventListener('click', () => {
+    content.sort((a, b) => {
+      const low = parseInt(a.others.views)
+      const high = parseInt(b.others.views)
+      return high - low
+    })
+    showSortedCard(content)
+  })
+
   const cardContainer = document.getElementById('card-container')
   cardContainer.innerHTML = ''
 
@@ -45,7 +56,64 @@ const showContent = async (categoryId) => {
     const card = document.createElement('div')
 
     card.innerHTML = `
-     <div class="shadow-xl card card-compact bg-base-100 mb-4 ">
+     <div class="shadow-xl hover:cursor-pointer hover:scale-105 card card-compact bg-base-100 mb-4 ">
+        <figure>
+          <img class='w-full h-48 object-cover'
+            src="${item?.thumbnail}"
+          />
+        </figure>
+        <div class="card-body">
+          <article class="flex gap-4">
+            <div class="">
+              <img src="${
+                item?.authors[0]?.profile_picture
+              }" class=" w-10 h-10 rounded-full object-cover" alt="" />
+            </div>
+              ${
+                seconds
+                  ? `
+              <p class="absolute bottom-[9rem] right-4 badge badge-neutral">
+                ${hours}hrs ${minutes} min ago
+              </p>
+              `
+                  : ''
+              }
+            <main>
+              <h2 class=" text-[#171717] font-bold card-title">
+                ${item?.title}
+              </h2>
+              <div class="flex text-[#171717b2] items-center gap-2 py-2">
+                <p class="flex-grow-0">${item?.authors[0]?.profile_name}</p>
+                 ${
+                   verified
+                     ? '<img src="./assets/fi_10629607.png" alt="" />'
+                     : ''
+                 }   
+              </div>
+              <p class=' text-[#171717b2] pt-1'>${item?.others?.views} views</p>
+            </main>
+          </article>
+        </div>
+      </div>
+    `
+    cardContainer.appendChild(card)
+  })
+}
+
+const showSortedCard = (content) => {
+  const cardContainer = document.getElementById('card-container')
+  cardContainer.innerHTML = ''
+
+  content.forEach((item) => {
+    const verified = item?.authors[0]?.verified
+    const seconds = item?.others?.posted_date
+    const hours = Math.floor(seconds / 3600)
+    const minutes = Math.floor((seconds % 3600) / 60)
+
+    const card = document.createElement('div')
+
+    card.innerHTML = `
+     <div class="shadow-xl hover:scale-105 hover:cursor-pointer card card-compact bg-base-100 mb-4 ">
         <figure>
           <img class='w-full h-48 object-cover'
             src="${item?.thumbnail}"
